@@ -50,6 +50,8 @@ su -c 'DEBIAN_FRONTEND=noninteractive apt-get install -y sudo && \\
 	dnssd()
 	vim()
 
+	# うまくいかないのでsshコマンド経由でreboot
+	# rebootコマンドは作り直す必要があるようだ
 	local("ssh %s@%s 'sudo reboot'; exit 0" % ( env.user, env.host_string) )
 
 @task
