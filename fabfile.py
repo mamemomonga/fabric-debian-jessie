@@ -24,7 +24,7 @@ def setup():
 	uncomment('/etc/locale.gen','^# en_US.UTF-8 UTF-8',char='# ',use_sudo=True)
 	uncomment('/etc/locale.gen','^# ja_JP.UTF-8 UTF-8',char='# ',use_sudo=True)
 	sudo('locale-gen')
-	sudo('update-locale LANG=ja_JP.UTF-8 MESSAGES=C')
+	sudo('update-locale LANG=ja_JP.UTF-8 LC_MESSAGES=C')
 
 	# アップデート
 	# libpam-systemd を入れればsshdからshutdownしても固まらない
